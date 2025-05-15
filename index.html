@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente de Estudo Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <button id="new-chat-btn" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> Nova conversa
+                </button>
+            </div>
+            <div class="chat-list" id="chat-list">
+                <!-- Chat sessions will be listed here -->
+            </div>
+            <div class="sidebar-footer">
+                <button id="settings-btn" class="btn btn-icon">
+                    <i class="fas fa-cog"></i> Configurações
+                </button>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="chat-container" id="chat-container">
+                <div class="chat-header">
+                    <h2 id="current-chat-title">Nova conversa</h2>
+                    <div class="chat-actions">
+                        <button id="rename-chat-btn" class="btn btn-icon" title="Renomear">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button id="delete-chat-btn" class="btn btn-icon" title="Excluir">
+                            <i, class="fas fa-trash"></i>
+                        </button>
+                        <button id="export-chat-btn" class="btn btn-icon" title="Exportar">
+                            <i class="fas fa-file-export"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="chat-history">
+                    <!-- Messages will be displayed here -->
+                    <div class="welcome-message">
+                        <h2>Bem-vindo ao Assistente de Estudo Inteligente</h2>
+                        <p>Digite um tópico que deseja estudar e eu irei gerar um material personalizado para você!</p>
+                    </div>
+                </div>
+                
+                <div class="chat-input-area">
+                    <textarea id="user-message" placeholder="Digite o tópico que deseja estudar (ex: Revolução Francesa, Cálculo Diferencial)"></textarea>
+                    <button id="send-message" class="btn btn-primary">Enviar <i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rename Chat Modal -->
+    <div class="modal" id="rename-modal">
+        <div class="modal-content">
+            <h3>Renomear Conversa</h3>
+            <input type="text" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px;" id="new-chat-name" placeholder="Digite o novo nome">
+            <div class="modal-actions">
+                <button id="cancel-rename" class="btn">Cancelar</button>
+                <button id="confirm-rename" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settings-modal">
+        <div class="modal-content">
+            <h3>Configurações</h3>
+            <div class="setting-item">
+                <label for="api-key-input">Chave API Gemini:</label>
+                <input type="password" id="api-key-input" placeholder="Digite sua chave API">
+            </div>
+            <div class="modal-actions">
+                <button id="cancel-settings" class="btn">Cancelar</button>
+                <button id="save-settings" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
