@@ -548,8 +548,8 @@ function loadSettings() {
     if (savedApiKey) {
         GEMINI_API_KEY = savedApiKey;
         GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
-    }else {
-        showApiKeyModal();
+    }else if(!savedApiKey || savedApiKey === '') {
+        showSettingsModal();
     }
 }
 
